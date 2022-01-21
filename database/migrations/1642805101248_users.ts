@@ -6,10 +6,13 @@ export default class Users extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-
-      /**
-       * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
-       */
+      table.string('username').unique()
+      table.string('password')
+      table.string('country')
+      table.string('state')
+      table.string('latitude')
+      table.string('longitude')
+      table.boolean('isAdmin').defaultTo(true)
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
     })
