@@ -19,10 +19,10 @@ export default class User extends BaseModel {
   public state: string
 
   @column()
-  public latitude: string
+  public latitude: number
 
   @column()
-  public longitude: string
+  public longitude: number
 
   @column()
   public isAdmin: boolean

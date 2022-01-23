@@ -6,7 +6,17 @@ export default class UsersController {
 
    public async index({ response}: HttpContextContract){
        const users = await User.all();
-       response.json(users);
+
+       const serializeUsers = users.map(user=>{
+           return {
+               username: user.username,
+               country: user.country,
+               state: user.state,
+               latitude: user.latitude,
+               longitude: user.longitude,
+           }
+       })
+       response.json(serializeUsers);
    }
 
    public async register({ request, response}: HttpContextContract){
