@@ -19,7 +19,7 @@ export default class AuthController {
              return response.status(401).json({ message: 'Nome de usuario ou senha incorretos'})
         }
 
-        const token = Jwt.sign({ username: user.username, isAdmin: user.isAdmin }, 'MySuperSecretPassowrd');
+        const token = Jwt.sign({ user }, 'MySuperSecretPassowrd');
  
         response.json(token);
  
