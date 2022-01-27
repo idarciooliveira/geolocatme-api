@@ -12,7 +12,7 @@ export default class Users extends BaseSchema {
       table.string('state')
       table.double('latitude')
       table.double('longitude')
-      table.boolean('isAdmin').defaultTo(true)
+      table.boolean('isAdmin')
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
     })

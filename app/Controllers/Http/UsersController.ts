@@ -14,6 +14,7 @@ export default class UsersController {
                state: user.state,
                latitude: user.latitude,
                longitude: user.longitude,
+               createdAt: user.createdAt
            }
        })
        response.json(serializeUsers);

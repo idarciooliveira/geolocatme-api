@@ -22,11 +22,11 @@ export default class AuthController {
         const token = Jwt.sign({ 
             user: {
                 username: user.username,
-                isAdmin: user.isAdmin,
                 latitude: user.latitude,
                 longitude: user.longitude,
                 country: user.country,
-                state: user.state
+                state: user.state,
+                isAdmin: user.isAdmin
             }
 
          }, 'MySuperSecretPassowrd');

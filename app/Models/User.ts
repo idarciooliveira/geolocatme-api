@@ -24,7 +24,7 @@ export default class User extends BaseModel {
   @column()
   public longitude: number
 
-  @column()
+  @column({columnName: 'isAdmin'})
   public isAdmin: boolean
 
   @column.dateTime({ autoCreate: true })
